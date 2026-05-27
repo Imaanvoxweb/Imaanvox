@@ -3,44 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيقي الذكي</title>
+    <title>واجهة التطبيق الذكي</title>
     <style>
-        /* تصميم الواجهة */
-        body { margin: 0; font-family: sans-serif; background-color: #121212; color: white; display: flex; flex-direction: column; height: 100vh; }
+        /* تنسيق عام */
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000; color: #fff; height: 100vh; overflow: hidden; }
         
-        .header { padding: 20px; text-align: center; background: #1f1f1f; font-weight: bold; }
+        /* حاوية الفيديو الرئيسية */
+        .video-feed { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(180deg, #333, #000); }
         
-        .content { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        /* شريط المعلومات السفلي */
+        .info-bar { position: absolute; bottom: 20px; left: 20px; right: 80px; }
+        .username { font-weight: bold; margin-bottom: 5px; }
+        .description { font-size: 0.9em; color: #ccc; }
         
-        .btn { background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        /* الأيقونات الجانبية */
+        .actions { position: absolute; right: 10px; bottom: 100px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+        .action-btn { font-size: 24px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 50%; cursor: pointer; }
         
-        /* تصميم الأيقونات الجانبية */
-        .side-icons { position: absolute; right: 20px; top: 40%; display: flex; flex-direction: column; gap: 20px; }
-        .icon { font-size: 28px; cursor: pointer; }
+        /* شريط التنقل السفلي */
+        .nav-bar { position: absolute; bottom: 0; width: 100%; height: 50px; background: #000; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #333; }
+        
+        /* زر التحديث */
+        .update-btn { position: absolute; top: 10px; left: 10px; background: #ff4500; padding: 5px 10px; border-radius: 5px; font-size: 12px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="header">مرحباً بك في تطبيقك الخاص</div>
+    <!-- زر التحقق من التحديث -->
+    <div class="update-btn" onclick="checkUpdate()">تحديث</div>
 
-    <div class="content">
-        <div>
-            <h2>أهلاً بك يا خميس</h2>
-            <p>هذه هي واجهة تطبيقك الأولى للتعلم</p>
-            <button class="btn" onclick="checkUpdate()">التحقق من وجود تحديث</button>
-        </div>
+    <!-- شاشة عرض الفيديو -->
+    <div class="video-feed">
+        <h1>فيديو 1</h1>
+        <p>محتوى الفيديو الخاص بك يظهر هنا</p>
     </div>
 
-    <div class="side-icons">
-        <div class="icon">❤️</div>
-        <div class="icon">💬</div>
-        <div class="icon">🔗</div>
+    <!-- معلومات الفيديو -->
+    <div class="info-bar">
+        <div class="username">@المستخدم_الرئيسي</div>
+        <div class="description">تجربة واجهة التطبيق الأولى للنمو</div>
+    </div>
+
+    <!-- الأيقونات الجانبية -->
+    <div class="actions">
+        <div class="action-btn">❤️</div>
+        <div class="action-btn">💬</div>
+        <div class="action-btn">🔗</div>
+    </div>
+
+    <!-- شريط التنقل -->
+    <div class="nav-bar">
+        <div>🏠</div>
+        <div>🔍</div>
+        <div>➕</div>
+        <div>👤</div>
     </div>
 
     <script>
-        // دالة برمجية بسيطة للتحقق من التحديث
         function checkUpdate() {
-            alert("جاري البحث عن تحديثات... التطبيق محدث حالياً لأحدث إصدار!");
+            alert("جاري التحقق من السيرفر... لا يوجد تحديث جديد حالياً.");
         }
     </script>
 </body>
