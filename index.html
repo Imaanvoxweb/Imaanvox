@@ -2,18 +2,33 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تطبيقي الذكي</title>
     <style>
-        body { margin: 0; background: #000; color: white; font-family: sans-serif; }
-        .video-container { height: 100vh; display: flex; align-items: center; justify-content: center; border: 2px solid #333; }
-        .side-icons { position: absolute; right: 20px; top: 50%; }
-        .icon { display: block; margin: 20px 0; font-size: 24px; cursor: pointer; }
+        /* تصميم الواجهة */
+        body { margin: 0; font-family: sans-serif; background-color: #121212; color: white; display: flex; flex-direction: column; height: 100vh; }
+        
+        .header { padding: 20px; text-align: center; background: #1f1f1f; font-weight: bold; }
+        
+        .content { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        
+        .btn { background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        
+        /* تصميم الأيقونات الجانبية */
+        .side-icons { position: absolute; right: 20px; top: 40%; display: flex; flex-direction: column; gap: 20px; }
+        .icon { font-size: 28px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="video-container">
-        <h1>هنا سيكون الفيديو الخاص بك</h1>
+    <div class="header">مرحباً بك في تطبيقك الخاص</div>
+
+    <div class="content">
+        <div>
+            <h2>أهلاً بك يا خميس</h2>
+            <p>هذه هي واجهة تطبيقك الأولى للتعلم</p>
+            <button class="btn" onclick="checkUpdate()">التحقق من وجود تحديث</button>
+        </div>
     </div>
 
     <div class="side-icons">
@@ -22,5 +37,11 @@
         <div class="icon">🔗</div>
     </div>
 
+    <script>
+        // دالة برمجية بسيطة للتحقق من التحديث
+        function checkUpdate() {
+            alert("جاري البحث عن تحديثات... التطبيق محدث حالياً لأحدث إصدار!");
+        }
+    </script>
 </body>
 </html>
